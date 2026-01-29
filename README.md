@@ -110,6 +110,103 @@ For each input image:
 
 ---
 
+---
+
+## Task 2 – Kernel Size, Stride & Pooling Operations
+
+This task explores the effect of **kernel size**, **stride**, and **pooling operations** on image representations, closely mirroring downsampling and receptive field growth in Convolutional Neural Networks (CNNs).
+
+---
+
+## 📌 Objective (Task 2)
+
+To study how different **kernel sizes** and **stride values** influence spatial resolution and information retention, and to compare **max, min, and average pooling** operations using robust, reusable parameter choices.
+
+---
+
+## 🖼️ Input Images
+
+The same grayscale images from Task 1 are reused to ensure consistency:
+
+- `Gradient.png`
+- `car.png`
+- `car_resize.png`
+
+---
+
+## 🧩 Kernel Sizes & Stride Selection
+
+The following kernel sizes are applied:
+
+- **5 × 5**
+- **9 × 9**
+- **11 × 11**
+
+Stride values are chosen **relative to kernel size** to balance spatial coverage and computational efficiency:
+
+| Kernel Size | Stride Values Used |
+|------------|-------------------|
+| 5 × 5      | 1, 3              |
+| 9 × 9      | 1, 3, 5           |
+| 11 × 11    | 1, 3, 5, 7        |
+
+> Larger kernels are paired with larger strides to simulate receptive field expansion while avoiding redundant overlap.
+
+---
+
+## 🧪 Pooling Operations Implemented
+
+For each kernel–stride combination, the following pooling methods are applied:
+
+- **Max Pooling** – preserves dominant local features and edges  
+- **Min Pooling** – suppresses bright noise, similar to erosion  
+- **Average Pooling** – smooth downsampling with stable representations  
+
+All pooling operations are implemented **without padding**, and the output spatial dimensions are computed analytically.
+
+---
+
+## 📊 Output Visualization
+
+- Results are visualized in **grid format** for each input image.
+- Each grid cell shows:
+  - Pooling type
+  - Kernel size
+  - Stride value
+  - Output resolution
+- This allows direct comparison of:
+  - Detail preservation vs downsampling
+  - Sensitivity to stride changes
+  - Pooling behavior across different images
+
+---
+
+## 🧠 Key Observations
+
+- Smaller kernels with stride 1 retain fine spatial details.
+- Larger kernels combined with higher strides significantly reduce spatial resolution while increasing contextual coverage.
+- Max pooling highlights structural edges, while average pooling provides smoother, more stable feature maps.
+- Min pooling effectively suppresses isolated bright artifacts.
+
+---
+
+## 🧠 Learning Outcomes
+
+- Understanding the role of **receptive fields** in CNNs
+- Effect of stride on feature map resolution
+- Functional differences between pooling operations
+- Practical intuition for selecting kernel–stride combinations
+
+---
+
+## ✅ Status
+
+✔️ Task 2 Completed  
+✔️ All kernel–stride–pooling combinations evaluated  
+✔️ Parameter choices validated for reuse in future tasks
+
+---
+
 ## ✍️ Author
 
 **Ravindra Mina**  
